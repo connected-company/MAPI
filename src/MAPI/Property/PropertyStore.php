@@ -167,7 +167,7 @@ class PropertyStore
                 return;
             }
             else {
-				// remove multivalue flag for individual pieces
+                // remove multivalue flag for individual pieces
                 $encoding = $encoding & ~$MULTIVAL;
             }
         }
@@ -354,15 +354,14 @@ class PropertyStore
             }
             else {
                 //# i think i hit these when i have a named property, in the PS_MAPI
-				//# guid
-				$this->logger->warning(sprintf('property in named range not in nameid %s', print_r($key, true)));
-				$key = new PropertyKey($key);
+                //# guid
+                $this->logger->warning(sprintf('property in named range not in nameid %s', print_r($key, true)));
+                $key = new PropertyKey($key);
             }
         }
         else {
             $key = new PropertyKey($key);
         }
-
 
         //$this->logger->debug(sprintf('Writing property %s', print_r($key, true)));
         //$hash = $key->getHash();
@@ -381,6 +380,7 @@ class PropertyStore
         else {
             $this->cache->set($key, $value);
         }
+
     }
 
     public function getCollection(): PropertyCollection
